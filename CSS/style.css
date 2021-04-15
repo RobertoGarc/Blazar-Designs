@@ -3,6 +3,10 @@
     
 }
 
+a{
+    text-decoration: none !important;
+}
+
 *{
     scroll-behavior: smooth;
 }
