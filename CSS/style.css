@@ -115,6 +115,7 @@ a{
 }
 
 .gallery-filter button{
+	background-color:transparent;
     color:#130d19;
     font-weight: 500;
     font-size: 18px;
