@@ -27,3 +27,28 @@ for(let i=0; i<filterBtns.length;i++){
         }
     })
 }
+
+const menuItem=document.querySelectorAll('.nav-link');
+const sections=document.querySelectorAll('.section');
+
+const functionObserver = entries => {
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            const itemActual=Array.from(menuItem).find(item=>item.dataset.url===entry.target.id);
+            itemActual.classList.add('active');
+            for(const item of menuItem){
+                if(item != itemActual){
+                    item.classList.remove('active');
+                }
+            }
+        }
+    })
+}
+
+const observer = new IntersectionObserver(functionObserver,{
+    root:null,
+    rootMargin:'0px',
+    threshold:0.2
+});
+
+sections.forEach(section=>observer.observe(section));
